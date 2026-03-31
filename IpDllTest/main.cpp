@@ -4,7 +4,7 @@
 #include <atlconv.h>
 #include "opencv2/opencv.hpp"
 #include "../include/inlineFunctions.h"
-#include "../gnPreProcessing/PreProcessingInterface.h"
+#include "../gnPostProcessing/inline_imgProc.h"
 #include "../gnPostProcessing/PostProcessingInterface.h"
 #include "../gnHardwareInfo/HardwareInfo.h"
 #include "../predix_sdk/common_type.h"
