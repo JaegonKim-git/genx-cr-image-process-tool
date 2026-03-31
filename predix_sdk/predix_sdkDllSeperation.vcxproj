@@ -116,7 +116,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>.\predix_sdk.def</ModuleDefinitionFile>
-      <AdditionalDependencies>gnHardwareInfo.lib;gnPreProcessing.lib;gnPostProcessing.lib;libtiff.lib</AdditionalDependencies>
+      <AdditionalDependencies>gnHardwareInfo.lib;gnCalibration.lib;gnPostProcessing.lib;libtiff.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(ProjectDir)tiff;</AdditionalLibraryDirectories>
       <DelayLoadDLLs>
       </DelayLoadDLLs>

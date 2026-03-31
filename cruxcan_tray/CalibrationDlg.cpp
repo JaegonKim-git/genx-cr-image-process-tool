@@ -3,7 +3,6 @@
 #include "stdafx.h"
 #include <algorithm> // 2023-11-22. jg kim.
 #include "../gnCalibration/CalibrationInterface.h" // 2023-11-22. jg kim.  Genoray calibration dll 사용을 위한 header
-#include "../gnPreProcessing/PreProcessingInterface.h"
 #include "../predix_sdk/common.h"
 #include "../predix_sdk/scanner.h"
 #include "../predix_sdk/tray_network.h"

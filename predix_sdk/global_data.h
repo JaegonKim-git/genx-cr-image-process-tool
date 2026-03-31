@@ -6,7 +6,7 @@
 
 #include "../predix_sdk/CiniFile.h"
 #include "../predix_sdk/constants.h"
-#include "../gnPreProcessing/inline_imgProc.h"
+#include "../gnPostProcessing/inline_imgProc.h"
 #include "CTicker.h"
 
 

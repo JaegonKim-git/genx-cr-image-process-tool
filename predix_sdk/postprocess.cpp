@@ -9,8 +9,8 @@
 #include "scanner.h"
 #include "common.h"
 #include "global_data.h"
-#include "../gnPreProcessing/inline_imgProc.h"
-#include "../gnPreProcessing/PreProcessingInterface.h"
+#include "../gnPostProcessing/inline_imgProc.h"
+#include "CalibrationInterface.h"
 #include "../gnPostProcessing/PostProcessingInterface.h"
 #include "../gnHardwareInfo/HardwareInfo.h"
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정

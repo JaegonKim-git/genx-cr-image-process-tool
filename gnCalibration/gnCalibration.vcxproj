@@ -199,6 +199,7 @@
     <ClInclude Include="CalibrationInterface.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="ImageProcessor.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PspCalibration.h" />
     <ClInclude Include="resource.h" />
@@ -206,6 +207,7 @@
   <ItemGroup>
     <ClCompile Include="CalibrationInterface.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="ImageProcessor.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -216,6 +218,11 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="gnCalibration.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gnPostProcessing\gnPostProcessing.vcxproj">
+      <Project>{A1B2C3D4-4444-4C0A-9868-82A93F48F72D}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

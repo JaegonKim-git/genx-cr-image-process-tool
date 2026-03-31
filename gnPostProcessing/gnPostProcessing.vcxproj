@@ -203,6 +203,7 @@
     <ClInclude Include="defines.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="..\gnPreProcessing\inline_imgProc.h" />
+    <ClInclude Include="inline_imgProc.h" />
     <ClInclude Include="MceIppi.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PostProcessingInterface.h" />
