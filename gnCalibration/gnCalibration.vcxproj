@@ -220,7 +220,7 @@
     <ResourceCompile Include="gnCalibration.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\gnPostProcessing\gnPostProcessing.vcxproj">
+    <ProjectReference Include="..\gnImageProcessing\gnImageProcessing.vcxproj">
       <Project>{A1B2C3D4-4444-4C0A-9868-82A93F48F72D}</Project>
     </ProjectReference>
   </ItemGroup>

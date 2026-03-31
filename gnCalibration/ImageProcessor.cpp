@@ -1,7 +1,7 @@
 ﻿// Added by 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "pch.h"
-#include "../gnPostProcessing/PostProcessingInterface.h" // ApplyLinecorrect 사용을 위함
+#include "../gnImageProcessing/PostProcessingInterface.h" // ApplyLinecorrect 사용을 위함
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정
 #include "../include/Logger.h"
 #include "ImageProcessor.h"

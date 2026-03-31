@@ -277,10 +277,10 @@
     <ProjectReference Include="..\gnCalibration\gnCalibration.vcxproj">
       <Project>{a1b2c3d4-1111-4c0a-9868-82a93f48f72d}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\gnHardwareInfo\gnHardwareInfo.vcxproj">
+    <ProjectReference Include="..\gnScanInformation\gnScanInformation.vcxproj">
       <Project>{a1b2c3d4-2222-4c0a-9868-82a93f48f72d}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\gnPostProcessing\gnPostProcessing.vcxproj">
+    <ProjectReference Include="..\gnImageProcessing\gnImageProcessing.vcxproj">
       <Project>{a1b2c3d4-4444-4c0a-9868-82a93f48f72d}</Project>
     </ProjectReference>
     <ProjectReference Include="..\gnPreProcessing\gnPreProcessing.vcxproj">

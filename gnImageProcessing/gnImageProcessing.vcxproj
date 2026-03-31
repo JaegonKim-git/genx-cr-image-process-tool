@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6C9F477F-FB98-4449-BCCE-C256B146E080}</ProjectGuid>
-    <RootNamespace>gnParameterHandler</RootNamespace>
+    <ProjectGuid>{A1B2C3D4-4444-4C0A-9868-82A93F48F72D}</ProjectGuid>
+    <RootNamespace>gnImageProcessingg</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>gnParameterHandler</ProjectName>
+    <ProjectName>gnImageProcessing</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -32,7 +32,6 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -40,7 +39,6 @@
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -95,7 +93,7 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNPARAMETERHANDLER_EXPORTS;_WINDOWS;_USRDLL;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNIMAGEPROCESSING_EXPORTS;_WINDOWS;_USRDLL;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -103,7 +101,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ExtLibs)opencv-4.3.0/include/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -111,9 +109,10 @@
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <LargeAddressAware>true</LargeAddressAware>
-      <AdditionalLibraryDirectories>$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world430d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
-      <DelayLoadDLLs>opencv_world430d.dll</DelayLoadDLLs>
+      <AdditionalLibraryDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ippi.lib;ippcv.lib;ipps.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -122,7 +121,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNPARAMETERHANDLER_EXPORTS;_WINDOWS;_USRDLL;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNIMAGEPROCESSING_EXPORTS;_WINDOWS;_USRDLL;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -130,7 +129,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ExtLibs)opencv-4.3.0/include/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -140,32 +139,33 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <LargeAddressAware>true</LargeAddressAware>
-      <AdditionalLibraryDirectories>$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
-      <DelayLoadDLLs>opencv_world430.dll</DelayLoadDLLs>
+      <AdditionalLibraryDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ippi.lib;ippcv.lib;ipps.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>
+      </DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
-<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNPARAMETERHANDLER_EXPORTS;_WINDOWS;_USRDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNIMAGEPROCESSING_EXPORTS;_WINDOWS;_USRDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWarningAsError>true</TreatWarningAsError>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ippi.lib;ippcv.lib;ipps.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>
       </DelayLoadDLLs>
     </Link>
@@ -176,15 +176,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNPARAMETERHANDLER_EXPORTS;_WINDOWS;_USRDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_THIS_PROJECT_="$(ProjectName)";DLL_EXPORT;GNIMAGEPROCESSING_EXPORTS;_WINDOWS;_USRDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWarningAsError>true</TreatWarningAsError>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -193,8 +193,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ippi.lib;ippcv.lib;ipps.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>
       </DelayLoadDLLs>
     </Link>
@@ -202,26 +202,25 @@
   <ItemGroup>
     <ClInclude Include="defines.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="ParameterCalculator.h" />
-    <ClInclude Include="ParameterCalculatorInterface.h" />
+    <ClInclude Include="..\gnPreProcessing\inline_imgProc.h" />
+    <ClInclude Include="inline_imgProc.h" />
+    <ClInclude Include="MceIppi.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PostProcessingInterface.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="resource1.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ParameterCalculator.cpp" />
-    <ClCompile Include="ParameterCalculatorInterface.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="MceIppi.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="gnParameterHandler.rc" />
+    <ResourceCompile Include="gnImageProcessing.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

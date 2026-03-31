@@ -101,21 +101,20 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnHardwareInfo;$(SolutionDir)gnPreProcessing;$(SolutionDir)gnPostProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnScanInformation;$(SolutionDir)gnImageProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\ImageProcessTool\$(Configuration);$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gnCalibration.lib;gnHardwareInfo.lib;gnPreProcessing.lib;gnPostProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnCalibration.lib;gnScanInformation.lib;gnImageProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>opencv_world430d.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnCalibration.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnHardwareInfo.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPreProcessing.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPostProcessing.dll" "Z:\NED\"
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnScanInformation.dll" "Z:\NED\"
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnImageProcessing.dll" "Z:\NED\"
 copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\predix_sdk.dll" "Z:\NED\"
 copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
     </PostBuildEvent>
@@ -141,7 +140,7 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnHardwareInfo;$(SolutionDir)gnPreProcessing;$(SolutionDir)gnPostProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnScanInformation;$(SolutionDir)gnImageProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -150,13 +149,13 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gnHardwareInfo.lib;gnCalibration.lib;gnPostProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnScanInformation.lib;gnCalibration.lib;gnImageProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>opencv_world430.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnHardwareInfo.dll" "Z:\NED\"
+      <Command>copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnScanInformation.dll" "Z:\NED\"
 copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnCalibration.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPostProcessing.dll" "Z:\NED\"
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnImageProcessing.dll" "Z:\NED\"
 copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\predix_sdk.dll" "Z:\NED\"
 copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
     </PostBuildEvent>
@@ -171,14 +170,14 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <OpenMPSupport>true</OpenMPSupport>
-      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnHardwareInfo;$(SolutionDir)gnPreProcessing;$(SolutionDir)gnPostProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnScanInformation;$(SolutionDir)gnImageProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gnCalibration.lib;gnHardwareInfo.lib;gnPreProcessing.lib;gnPostProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnCalibration.lib;gnScanInformation.lib;gnImageProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430d.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>opencv_world430d.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
@@ -194,7 +193,7 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <OpenMPSupport>true</OpenMPSupport>
-      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnHardwareInfo;$(SolutionDir)gnPreProcessing;$(SolutionDir)gnPostProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnScanInformation;$(SolutionDir)gnImageProcessing;$(SolutionDir)predix_sdk;$(ExtLibs)opencv-4.3.0/include/;$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -203,7 +202,7 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gnCalibration.lib;gnHardwareInfo.lib;gnPreProcessing.lib;gnPostProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnCalibration.lib;gnScanInformation.lib;gnImageProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>opencv_world430.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
@@ -211,9 +210,9 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
     <ClInclude Include="framework.h" />
     <ClInclude Include="helpersh.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="../gnPostProcessing/PostProcessingInterface.h" />
-    <ClInclude Include="../gnPreProcessing/PreProcessingInterface.h" />
-    <ClInclude Include="../gnHardwareInfo/HardwareInfo.h" />
+    <ClInclude Include="../gnImageProcessing/PostProcessingInterface.h" />
+    <ClInclude Include="../gnCalibration/CalibrationInterface.h" />
+    <ClInclude Include="../gnScanInformation/HardwareInfo.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

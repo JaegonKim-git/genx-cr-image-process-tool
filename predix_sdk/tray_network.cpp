@@ -10,7 +10,7 @@
 #include "CTCPsc.h"
 #include "global_data.h"
 #include "postprocess.h"
-#include "../gnHardwareInfo/HardwareInfo.h"	// 2026-02-27. jg kim. decodeGenorayTag 사용을 위함
+#include "../gnScanInformation/HardwareInfo.h"	// 2026-02-27. jg kim. decodeGenorayTag 사용을 위함
 #include "../include/logger.h"
 
 #include <winsock2.h>

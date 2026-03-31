@@ -1,7 +1,7 @@
 #include "ParameterExtractorInterface.h"
 #include "ParameterExtractor.h"
 //#include "../gnPreProcessing/PreProcessingInterface.h"
-#include "../gnHardwareInfo/HardwareInfo.h" // 2024-08-06. jg kim. Added to handle images with ambient light during production
+#include "../gnScanInformation/HardwareInfo.h" // 2024-08-06. jg kim. Added to handle images with ambient light during production
 // 2026-02-02. jg kim. include�� logger�� ����ϵ��� ����
 #include "../include/Logger.h"
 

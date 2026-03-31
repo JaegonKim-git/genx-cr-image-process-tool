@@ -15,7 +15,7 @@
 #include "cruxcan_tray.h"
 #include "cruxcan_trayDlg.h"
 #include "CalibrationDlg.h"
-#include "../gnHardwareInfo/HardwareInfo.h" // 2024-08-26. jg kim. calibration data의 유효성을 검사하기 위해 추가
+#include "../gnScanInformation/HardwareInfo.h" // 2024-08-26. jg kim. calibration data의 유효성을 검사하기 위해 추가
 
 using namespace crux;
 

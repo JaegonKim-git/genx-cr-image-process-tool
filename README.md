@@ -30,11 +30,10 @@ GenX-CR Image Process Tool은 X-Ray 이미지 처리 및 분석을 위한 Window
 GenX-CR-Image-Process-Tool/
 ├── cruxcan_tray/          # 메인 애플리케이션 (System Tray)
 ├── gnCalibration/        # 캘리브레이션 DLL
-├── gnHardwareInfo/       # 하드웨어 정보 DLL
-├── gnPreProcessing/      # 전처리 DLL
-├── gnPostProcessing/     # 후처리 DLL
+├── gnScanInformation/       # 하드웨어 정보 DLL
+├── gnImageProcessing/     # 후처리 DLL
 ├── predix_sdk/           # Predix SDK 라이브러리
-├── ParameterHandler/     # 파라미터 관리 모듈
+├── gnScanCalibrationHelper/     # 장비 캘리브레이션에 사용하는 파라미터 계산 helper
 ├── cruxcan_sdk/          # CRUXCAN SDK
 ├── imagecontrol/         # 이미지 컨트롤 UI 컴포넌트
 ├── IpDllTest/           # DLL 테스트 프로젝트
@@ -76,24 +75,21 @@ GenX-CR-Image-Process-Tool/
 ### 2. gnCalibration
 - 캘리브레이션 기능 DLL
 - 이미지 칼리브레이션 알고리즘
+- OpenCV 기반 전처리 알고리즘
 
-### 3. gnHardwareInfo
+### 3. gnScanInformation
 - 하드웨어 정보 관리 DLL
 - 장치 정보 조회 및 관리
 
-### 4. gnPreProcessing
-- 이미지 전처리 DLL
-- OpenCV 기반 전처리 알고리즘
-
-### 5. gnPostProcessing
+### 4. gnImageProcessing
 - 이미지 후처리 DLL
 - OpenCV 기반 후처리 알고리즘
 
-### 6. predix_sdk
+### 5. predix_sdk
 - Predix 플랫폼 SDK
 - 하드웨어 통신 인터페이스
 
-### 7. ParameterHandler
+### 6. gnScanCalibrationHelper
 - 시스템 파라미터 관리
 - 설정값 저장 및 로드
 

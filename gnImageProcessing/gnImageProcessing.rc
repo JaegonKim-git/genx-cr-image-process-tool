@@ -43,9 +43,9 @@ BEGIN
             VALUE "CompanyName", "GENORAY"
             VALUE "FileDescription", "Genoray PostProcessing DLL"
             VALUE "FileVersion", "1.0.0.1"
-            VALUE "InternalName", "gnPostProcessing.dll"
+            VALUE "InternalName", "gnImageProcessing.dll"
             VALUE "LegalCopyright", "(C) 2026. GENORAY Co., Ltd. All rights reserved."
-            VALUE "OriginalFilename", "gnPostProcessing.dll"
+            VALUE "OriginalFilename", "gnImageProcessing.dll"
             VALUE "ProductName", "Genoray S/W Platform"
             VALUE "ProductVersion", "1.0.0.1"
         END

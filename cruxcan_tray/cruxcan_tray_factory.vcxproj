@@ -127,7 +127,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>gnCalibration.lib;gnHardwareInfo.lib;gnPostProcessing.lib;gnParameterHandler.lib;predix_sdk.lib;libtiff.lib;opencv_world430.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnCalibration.lib;gnScanInformation.lib;gnImageProcessing.lib;gnScanCalibrationHelper.lib;predix_sdk.lib;libtiff.lib;opencv_world430.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(SolutionDir)Lib\$(Configuration);..\cruxcan_sdk\tiff;</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
@@ -161,7 +161,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
-      <AdditionalDependencies>gnCalibration.lib;gnHardwareInfo.lib;gnPreProcessing.lib;gnPostProcessing.lib;gnParameterHandler.lib;libtiff.lib;opencv_world430d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnCalibration.lib;gnScanInformation.lib;gnCalibration.lib;gnImageProcessing.lib;gnScanCalibrationHelper.lib;libtiff.lib;opencv_world430d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(SolutionDir)Lib\$(Configuration);..\cruxcan_sdk\tiff;</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>

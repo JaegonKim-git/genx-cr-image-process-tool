@@ -52,7 +52,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="gnParameterHandler.rc">
+    <ResourceCompile Include="gnScanCalibrationHelper.rc">
       <Filter>리소스 파일</Filter>
     </ResourceCompile>
   </ItemGroup>

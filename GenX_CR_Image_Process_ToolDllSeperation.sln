@@ -20,11 +20,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "predix_sdkDllSeperation", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnCalibration", "gnCalibration\gnCalibration.vcxproj", "{A1B2C3D4-1111-4C0A-9868-82A93F48F72D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnHardwareInfo", "gnHardwareInfo\gnHardwareInfo.vcxproj", "{A1B2C3D4-2222-4C0A-9868-82A93F48F72D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnScanInformation", "gnScanInformation\gnScanInformation.vcxproj", "{A1B2C3D4-2222-4C0A-9868-82A93F48F72D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnPostProcessing", "gnPostProcessing\gnPostProcessing.vcxproj", "{A1B2C3D4-4444-4C0A-9868-82A93F48F72D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnImageProcessing", "gnImageProcessing\gnImageProcessing.vcxproj", "{A1B2C3D4-4444-4C0A-9868-82A93F48F72D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnParameterHandler", "gnParameterHandler\gnParameterHandler.vcxproj", "{6C9F477F-FB98-4449-BCCE-C256B146E080}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnScanCalibrationHelper", "gnScanCalibrationHelper\gnScanCalibrationHelper.vcxproj", "{6C9F477F-FB98-4449-BCCE-C256B146E080}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

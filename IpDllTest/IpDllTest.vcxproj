@@ -112,9 +112,9 @@
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnCalibration.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnHardwareInfo.dll" "Z:\NED\"
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnScanInformation.dll" "Z:\NED\"
 copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPreProcessing.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPostProcessing.dll" "Z:\NED\"</Command>
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnImageProcessing.dll" "Z:\NED\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -150,9 +150,9 @@ copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPostProcessing.dll" "Z:
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnCalibration.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnHardwareInfo.dll" "Z:\NED\"
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnScanInformation.dll" "Z:\NED\"
 copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPreProcessing.dll" "Z:\NED\"
-copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnPostProcessing.dll" "Z:\NED\"
+copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\gnImageProcessing.dll" "Z:\NED\"
 copy "$(SolutionDir)\ImageProcessTool\$(Configuration)\predix_sdk.dll" "Z:\NED\"
 copy "$(OutDir)PortView$(ProjectName).exe" "Z:\NED\"</Command>
     </PostBuildEvent>
@@ -207,9 +207,9 @@ copy "$(OutDir)PortView$(ProjectName).exe" "Z:\NED\"</Command>
     <ClInclude Include="framework.h" />
     <ClInclude Include="helpersh.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="../gnPostProcessing/PostProcessingInterface.h" />
+    <ClInclude Include="../gnImageProcessing/PostProcessingInterface.h" />
     <ClInclude Include="../gnPreProcessing/PreProcessingInterface.h" />
-    <ClInclude Include="../gnHardwareInfo/HardwareInfo.h" />
+    <ClInclude Include="../gnScanInformation/HardwareInfo.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -230,13 +230,13 @@ copy "$(OutDir)PortView$(ProjectName).exe" "Z:\NED\"</Command>
     <ProjectReference Include="..\gnCalibration\gnCalibration.vcxproj">
       <Project>{8b3a5a5f-7b3c-4d5e-8f9a-1a2b3c4d5e6f}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\gnHardwareInfo\gnHardwareInfo.vcxproj">
+    <ProjectReference Include="..\gnScanInformation\gnScanInformation.vcxproj">
       <Project>{9c4b6b6f-8c4d-5e6f-9f0b-2b3c4d5e6f7a}</Project>
     </ProjectReference>
     <ProjectReference Include="..\gnPreProcessing\gnPreProcessing.vcxproj">
       <Project>{ad5c7c7f-9d5e-6f7a-af1c-3c4d5e6f7a8b}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\gnPostProcessing\gnPostProcessing.vcxproj">
+    <ProjectReference Include="..\gnImageProcessing\gnImageProcessing.vcxproj">
       <Project>{be6d8d8f-ae6f-7a8b-bf2d-4d5e6f7a8b9c}</Project>
     </ProjectReference>
     <ProjectReference Include="..\predix_sdk\predix_sdk.vcxproj">

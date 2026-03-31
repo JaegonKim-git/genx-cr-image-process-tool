@@ -49,7 +49,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="gnPostProcessing.rc">
+    <ResourceCompile Include="gnImageProcessing.rc">
       <Filter>리소스 파일</Filter>
     </ResourceCompile>
   </ItemGroup>

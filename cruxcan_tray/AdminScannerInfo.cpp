@@ -10,10 +10,10 @@
 #include "../predix_sdk/tray_network.h"
 //#include "../predix_sdk/global_data.h" // 2024-08-23. jg kim. AdminScannerInfo.h로 이동
 #include "../cruxcan_tray/resource.h"
-#include "../gnParameterHandler/ParameterCalculatorInterface.h"
-//#include "../gnHardwareInfo/HardwareInfo.h" // 2024-06-26. jg kim. MPPC bias 전압 계산을 위함.
-#include "../gnHardwareInfo/HardwareInfoInterface.h"
-#include "../gnPostProcessing/inline_imgProc.h" // 2026-03-31. jg kim. 위치 이동
+#include "../gnScanCalibrationHelper/ParameterCalculatorInterface.h"
+//#include "../gnScanInformation/HardwareInfo.h" // 2024-06-26. jg kim. MPPC bias 전압 계산을 위함.
+#include "../gnScanInformation/HardwareInfoInterface.h"
+#include "../gnImageProcessing/inline_imgProc.h" // 2026-03-31. jg kim. 위치 이동
 #include "../include/inlineFunctions.h"
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정
 #include "../include/Logger.h"
