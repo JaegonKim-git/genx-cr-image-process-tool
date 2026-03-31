@@ -664,12 +664,12 @@ std::vector<cv::Mat> ImageProcessor::Preprocess_PE(std::vector<cv::Mat> coeffs)
 	cv::Rect roi(TAG_POSITION + 1, 0, 100, _input.rows / 2);
 	minMaxLoc(tagRemoved(roi), &min, &max);
 	cv::Mat output = cv::Mat::zeros(_input.size(), CV_32F);
-	if (BinarizeIPArea(bin, tagRemoved))
+	if (BinarizeIPArea(bin, tagRemoved.clone()))
 	{
 		RotatedRect minRect;
 		//if (m_nImageProcessMode == 2)
 		{
-			cv::Mat th = GetBinaryImage(tagRemoved);
+			cv::Mat th = GetBinaryImage(tagRemoved.clone());
 			int nCountsTh = PixelCounts(th, 1000);
 			int nCountsBin = PixelCounts(bin, 1000);
 
