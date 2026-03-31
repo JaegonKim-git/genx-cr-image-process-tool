@@ -1,0 +1,34 @@
+# Build outputs
+ImageProcessTool/Debug/
+ImageProcessTool/Release/
+ImageProcessTool/x64/
+ConsoleApp/Debug/
+ConsoleApp/Release/
+ConsoleApp/x64/
+
+# Visual Studio intermediate files
+*.obj
+*.pch
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.tlog
+*.lastbuildstate
+*.log
+*.iobj
+*.ipdb
+*.unsuccessfulbuild
+
+# Visual Studio user files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Project-specific intermediate directories
+*/Win32/Debug/
+*/Win32/Release/
+*/x64/Debug/
+*/x64/Release/
+.vs/

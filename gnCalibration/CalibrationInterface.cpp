@@ -1,0 +1,14 @@
+// Added by 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include "pch.h"
+#include "CalibrationInterface.h"
+#include "PspCalibration.h"
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Coefficients
+extern "C" void __cdecl calculateCoefficients(float *coefficients, unsigned short *images, int width, int height, int L, int T, int W, int H, int count) 
+{
+	CPspCalibration::calculateCoefficients(coefficients, images, width, height, L, T, W, H, count);
+}

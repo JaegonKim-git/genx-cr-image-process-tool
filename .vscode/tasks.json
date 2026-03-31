@@ -1,0 +1,96 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "IpDllTestDllSeperation: Win32 Release",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Release /p:Platform=x86 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Release /p:Platform=x86 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "IpDllTestDllSeperation: Win32 Debug",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x86 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x86 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "IpDllTestDllSeperation: x64 Release",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Release /p:Platform=x64 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Release /p:Platform=x64 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "IpDllTestDllSeperation: x64 Debug",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x64 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\IpDllTestDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x64 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "GenX_CR_Image_Process_ToolDllSeperation: Win32 Release",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Release /p:Platform=x86 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Release /p:Platform=x86 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "GenX_CR_Image_Process_ToolDllSeperation: Win32 Debug",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x86 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x86 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "GenX_CR_Image_Process_ToolDllSeperation: x64 Release",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Release /p:Platform=x64 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Release /p:Platform=x64 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "GenX_CR_Image_Process_ToolDllSeperation: x64 Debug",
+            "type": "shell",
+            "command": "& 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x64 /t:Clean ; & 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\MSBuild\\15.0\\Bin\\MSBuild.exe' \"${workspaceFolder}\\GenX_CR_Image_Process_ToolDllSeperation.sln\" /p:Configuration=Debug /p:Platform=x64 /t:Build",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "🗑️ Clean Temp Files (Keep DLL/EXE/LIB)",
+            "type": "shell",
+            "hide": false, // true : 임시파일 삭제하지 않음. false : 임시파일 삭제
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy", "Bypass",
+                "-File", "${workspaceFolder}\\.vscode\\clean-temp.ps1"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

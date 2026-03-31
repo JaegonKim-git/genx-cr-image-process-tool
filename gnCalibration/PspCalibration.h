@@ -1,0 +1,40 @@
+// Added by 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma once
+#include "opencv2/opencv.hpp"
+#include "CalibrationInterface.h"
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+class CPspCalibration
+{
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// public constructor and destructor
+public:
+	// constructor
+	CPspCalibration(float *coefficients, unsigned short *images, int width, int height, int L, int T, int W, int H, int count);
+
+	// destructor
+	~CPspCalibration();
+
+	// constructor (default constructor를 사용하지 않을 경우에는 명시적으로 제거)
+	CPspCalibration() = delete;
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// public methods
+public:
+	// Coefficients
+	static void calculateCoefficients(float* pCoefficients, unsigned short *pImages, int width, int height, int L, int T, int W, int H, int count);
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// private methods
+private:
+	static cv::Mat get_raw_mat(int width, int height, unsigned short * cs_img);
+	static cv::Mat polyfit(const cv::Mat & src_x, const cv::Mat & src_y, int order);
+	static float getGain(cv::Mat p1, cv::Mat p2, float level);
+	static float get_fitted_value(cv::Mat p, float valueInput);
+};
