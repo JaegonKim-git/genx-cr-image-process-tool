@@ -12,7 +12,7 @@
 #include "../cruxcan_tray/resource.h"
 #include "../gnScanCalibrationHelper/ParameterCalculatorInterface.h"
 //#include "../gnScanInformation/HardwareInfo.h" // 2024-06-26. jg kim. MPPC bias 전압 계산을 위함.
-#include "../gnScanInformation/HardwareInfoInterface.h"
+#include "../gnImageProcessing/ImageProcessingInterface.h"
 #include "../gnImageProcessing/inline_imgProc.h" // 2026-03-31. jg kim. 위치 이동
 #include "../include/inlineFunctions.h"
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정

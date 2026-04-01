@@ -129,7 +129,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/include;$(ExtLibs)opencv-4.3.0/include/</AdditionalIncludeDirectories>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -139,8 +139,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <LargeAddressAware>true</LargeAddressAware>
-      <AdditionalLibraryDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ippi.lib;ippcv.lib;ipps.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>
       </DelayLoadDLLs>
     </Link>
@@ -202,15 +202,21 @@
   <ItemGroup>
     <ClInclude Include="defines.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="HardwareInfo.h" />
     <ClInclude Include="..\gnPreProcessing\inline_imgProc.h" />
+    <ClInclude Include="ImageProcessingInterface.h" />
+    <ClInclude Include="ImageProcessor.h" />
     <ClInclude Include="inline_imgProc.h" />
     <ClInclude Include="MceIppi.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="PostProcessingInterface.h" />
+    <ClInclude Include="PspCalibration.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="HardwareInfo.cpp" />
+    <ClCompile Include="HardwareInfoInterface.cpp" />
+    <ClCompile Include="ImageProcessor.cpp" />
     <ClCompile Include="MceIppi.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -218,6 +224,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PspCalibration.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="gnImageProcessing.rc" />

@@ -3,8 +3,6 @@
 #include "pch.h"
 #include "HardwareInfo.h"
 #include "../include/logger.h" // 2026-02-02. jg kim. logger 사용하도록 수정
-
-const char* LOG_FILE_NAME = "HardwareInfo.log";
 #ifdef _MFC_VER
 #ifdef _DEBUG
 #define new DEBUG_NEW

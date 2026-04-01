@@ -2,6 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "pch.h"
 #include "PspCalibration.h"
+#include "ImageProcessingInterface.h"
 #include <math.h>
 
 using namespace cv;
@@ -14,11 +15,11 @@ using namespace cv;
 
 
 
-// 다른 파일에서 정의하고 있음. 중복 정의이므로 주석처리함.
-//extern "C" void __cdecl calculateCoefficients(float *coefficients, unsigned short *images, int width, int height, int L, int T, int W, int H, int count)
-//{
-//	CPspCalibration cal(coefficients, images, width, height, L, T, W, H, count);
-//}
+// ??? ??????? ??????? ????. ??? ???????? ????????.
+extern "C" void __cdecl calculateCoefficients(float *coefficients, unsigned short *images, int width, int height, int L, int T, int W, int H, int count) 
+{
+	CPspCalibration::calculateCoefficients(coefficients, images, width, height, L, T, W, H, count);
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +41,7 @@ CPspCalibration::~CPspCalibration()
 // 
 void CPspCalibration::calculateCoefficients(float* coefficients, unsigned short* images, int width, int height, int L, int T, int W, int H, int count)
 {
-	// L, T, W, H 는 calibration 계수 계산에 사용할 ROI
+	// L, T, W, H ?? calibration ??? ??꿡 ????? ROI
 	int N = count + 1;
 	Mat Xs = Mat::zeros(W, 1, CV_32F);
 	Mat Ys = Mat::zeros(W, N, CV_32F);
@@ -55,7 +56,7 @@ void CPspCalibration::calculateCoefficients(float* coefficients, unsigned short*
 		{
 			if (n < 1)
 				Xs.at<float>(w) = float(L + w);
-			Ys.at<float>(w, n) = (float)mean(Blurred(Rect(L + w, T, 1, H))).val[0]; // Rect로 정의한 sub image의 평균값
+			Ys.at<float>(w, n) = (float)mean(Blurred(Rect(L + w, T, 1, H))).val[0]; // Rect?? ?????? sub image?? ????
 		}
 
 		coefficients[n] += float(mean(Ys.col(n)).val[0]);
@@ -69,7 +70,7 @@ void CPspCalibration::calculateCoefficients(float* coefficients, unsigned short*
 cv::Mat CPspCalibration::get_raw_mat(int width, int height, unsigned short* cs_img)
 {
 	cv::Mat mat = cv::Mat(height, width, CV_16UC1, cs_img);
-	cv::Mat img = mat.clone();// clone 안해주면 아마 원본 포인터 그대로 당겨서 쓰는게 아닌가싶다
+	cv::Mat img = mat.clone();// clone ??????? ??? ???? ?????? ???? ???? ???°? ???????
 	return img;
 }
 

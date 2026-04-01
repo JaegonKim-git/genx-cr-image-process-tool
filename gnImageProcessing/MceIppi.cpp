@@ -49,7 +49,7 @@ extern "C" void __cdecl PostProcessingParametersSetting(IMG_PROCESS_PARAM params
 }
 // 2024-04-26. jg kim. log 작성을 위해 추가
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정
-const char* LOG_FILE_NAME = "ImageProcessing.log";
+static const char* LOG_FILE_NAME = "ImageProcessing.log";
 
 // 2024-04-22. jg kim. 영상처리 리턴값 추가
 extern "C" void __cdecl PostProcess(unsigned short* result_img, int& result_width, int& result_height, bool &bResult,
@@ -2047,11 +2047,16 @@ BOOL CMceIppi::ProcessMceIppi(IMG_PROCESS_PARAM ipp)
 		// 2026-02-02. jg kim. include의 logger를 사용하도록 수정
 		writelog(buf, LOG_FILE_NAME);
 	}
-	
-	if(ipp.cImageFilterInfo.bApply) // 2024-03-04. jg kim. Unsharpmask 옵션 처리
-		ApplyUnsharpMask(ipp.cImageFilterInfo.nAmount, ipp.cImageFilterInfo.dRadius, ipp.cImageFilterInfo.nThreshold);	
-		sprintf_s(name, "%s_08_ApplyUnsharpMask_%d-%d.raw", strPrefix, m_nImgWidth, m_nImgHeight);
-		SaveIpp32f(name);
+
+	if (ipp.cImageFilterInfo.bApply) // 2024-03-04. jg kim. Unsharpmask 옵션 처리
+	{
+		ApplyUnsharpMask(ipp.cImageFilterInfo.nAmount, ipp.cImageFilterInfo.dRadius, ipp.cImageFilterInfo.nThreshold);
+		if (m_bSaveImageProcessingStep)
+		{
+			sprintf_s(name, "%s_08_ApplyUnsharpMask_%d-%d.raw", strPrefix, m_nImgWidth, m_nImgHeight);
+			SaveIpp32f(name);
+		}
+	}
 	// 2024-02-26. jg kim. 함수가 잘못 들어가 비활성화 시킴.
 	// 2024-02-27. jg kim. 특정 영상의 경우 gamma correction을 하면 NAN이 나와 복원.
 	// 2024-02-27. jg kim. 하드코딩 되어 있었던 코드 수정.

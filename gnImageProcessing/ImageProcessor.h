@@ -1,7 +1,7 @@
 ﻿// Added by 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "CalibrationInterface.h"
+#include "ImageProcessingInterface.h"
 #include "defines.h"
 #include "../predix_sdk/constants.h" // 2025-02-11. jg kim. constants.h로 이동된 macro들을 사용하기 위함
 #include "opencv2/opencv.hpp"

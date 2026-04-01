@@ -3,7 +3,7 @@
 #pragma once
 #include "ipp.h"
 #include <winsock.h>
-#include "PostProcessingInterface.h"
+#include "ImageProcessingInterface.h"
 
 
 

@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include <algorithm> // 2023-11-22. jg kim.
-#include "../gnCalibration/CalibrationInterface.h" // 2023-11-22. jg kim.  Genoray calibration dll 사용을 위한 header
+#include "../gnImageProcessing/ImageProcessingInterface.h" // 2023-11-22. jg kim.  Genoray calibration dll 사용을 위한 header
 #include "../predix_sdk/common.h"
 #include "../predix_sdk/scanner.h"
 #include "../predix_sdk/tray_network.h"
@@ -15,7 +15,7 @@
 #include "cruxcan_tray.h"
 #include "cruxcan_trayDlg.h"
 #include "CalibrationDlg.h"
-#include "../gnScanInformation/HardwareInfo.h" // 2024-08-26. jg kim. calibration data의 유효성을 검사하기 위해 추가
+#include "../gnImageProcessing/HardwareInfo.h" // 2024-08-26. jg kim. calibration data의 유효성을 검사하기 위해 추가
 
 using namespace crux;
 

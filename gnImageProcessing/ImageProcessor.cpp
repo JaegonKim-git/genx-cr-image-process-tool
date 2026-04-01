@@ -1,7 +1,7 @@
 ﻿// Added by 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "pch.h"
-#include "../gnImageProcessing/PostProcessingInterface.h" // ApplyLinecorrect 사용을 위함
+#include "../gnImageProcessing/ImageProcessingInterface.h" // ApplyLinecorrect 사용을 위함
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정
 #include "../include/Logger.h"
 #include "ImageProcessor.h"
@@ -407,7 +407,6 @@ std::vector<cv::Mat> ImageProcessor::Preprocess(std::vector<cv::Mat> coeffs)
 		// if (m_bSaveCorrectionStep)
 		// {
 		// 	writelog(buf, LOG_FILE_NAME);
-		 	cv::imwrite("PRE_3-1. th.tif", th, m_tiffParams);
 		// }
 		RotatedRect minRect;
 		bin = mergeMask(th, bin, minRect); // 2024-12-13. jg kim. 좌측 및 상단의 기구물 제거를 위해 구현
@@ -417,7 +416,7 @@ std::vector<cv::Mat> ImageProcessor::Preprocess(std::vector<cv::Mat> coeffs)
 		{
 				sprintf(buf, "PRE_3. checked bin\n");
 				writelog(buf, LOG_FILE_NAME);
-				cv::imwrite("PRE_3-2. checked bin.tif", bin, m_tiffParams);
+				cv::imwrite("PRE_3. checked bin.tif", bin, m_tiffParams);
 			}
 
 		// 2024-09-24. jg kim. NED map을 위해 rtBounding을 사용하지 않음
@@ -468,11 +467,9 @@ std::vector<cv::Mat> ImageProcessor::Preprocess(std::vector<cv::Mat> coeffs)
 					}
 				temp.copyTo(NedNegative);
 			}
-			cv::imwrite("PRE_4. NedNegative_forMTF.tif", NedNegative, m_tiffParams);
 		}
 
 		cv::Mat output = ProcessNedArea(imgF, result, NedNegative);
-		cv::imwrite("PRE_4. ProcessNedArea_ned.tif", output, m_tiffParams); // 디버깅용 NED 영역 처리 영상 저장
 
 		if (m_bSaveCorrectionStep)
 			cv::imwrite("PRE_4. gain.tif", output, m_tiffParams);
@@ -2450,7 +2447,6 @@ cv::Mat ImageProcessor::CreateInitialBackground_New(cv::Mat & input_)
 	// max 값보다 작은 영역에 있는 background를 제거하기 위함.
 	//cv::Rect roi(TAG_POSITION + 1, 0, 100, _input.rows / 2);
 	
-	cv::imwrite("PRE_adaptiveThreshold.tif", output);
 	cv::minMaxIdx(input_(m_roiBackground), &minVal, &maxVal);
 	for (int y = 0; y < input_.rows; y++)
 		for (int x = 0; x < input_.cols; x++)
@@ -2494,7 +2490,6 @@ cv::Mat ImageProcessor::CreateInitialBackground_New(cv::Mat & input_)
 	int nKernelSize = 25;
 
 	output = getCleanBinaryMask(output, nKernelSize, fEdgeThresh);
-	cv::imwrite("PRE_adaptiveThreshold_cleaned.tif", output);
 	return CreateConvexHull(output);
 }
 

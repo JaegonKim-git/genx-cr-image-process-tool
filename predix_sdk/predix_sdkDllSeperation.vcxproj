@@ -106,7 +106,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <OpenMPSupport>true</OpenMPSupport>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnScanInformation;$(SolutionDir)gnImageProcessing;$(SolutionDir)ExtLibs/predix_preprocessing;$(ExtLibs)tiff-4.6.0/include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)gnCalibration;$(SolutionDir)gnImageProcessing;$(SolutionDir)ExtLibs/predix_preprocessing;$(ExtLibs)tiff-4.6.0/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -116,7 +116,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>.\predix_sdk.def</ModuleDefinitionFile>
-      <AdditionalDependencies>gnScanInformation.lib;gnCalibration.lib;gnImageProcessing.lib;libtiff.lib</AdditionalDependencies>
+      <AdditionalDependencies>gnImageProcessing.lib;libtiff.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(ProjectDir)tiff;</AdditionalLibraryDirectories>
       <DelayLoadDLLs>
       </DelayLoadDLLs>

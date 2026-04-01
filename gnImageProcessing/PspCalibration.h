@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include "opencv2/opencv.hpp"
-#include "CalibrationInterface.h"
+#include "ImageProcessingInterface.h"
 
 
 
@@ -19,7 +19,7 @@ public:
 	// destructor
 	~CPspCalibration();
 
-	// constructor (default constructor를 사용하지 않을 경우에는 명시적으로 제거)
+	// constructor (default constructor?? ??????? ???? ??쿡?? ?????????? ????)
 	CPspCalibration() = delete;
 
 
