@@ -11,7 +11,6 @@
 #include "global_data.h"
 #include "../gnImageProcessing/inline_imgProc.h"
 #include "../gnImageProcessing/ImageProcessingInterface.h"
-#include "../gnImageProcessing/HardwareInfo.h"
 // 2026-02-02. jg kim. include의 logger를 사용하도록 수정
 #include "../include/Logger.h"
 #include <memory>
@@ -38,7 +37,7 @@ void pre_postprocess_by_dll(int nMode)
 	// predixcr에 최적화되지 않아 현재 그냥 리턴함
 	//return;	
 	// 2024-05-02. 영상 보정/처리 과정의 로그 작성을 위함
-	CHardwareInfo hwi;
+	//CHardwareInfo hwi;
 	char buf[1024];
 
 	// 2026-03-04. jg kim. 영상 파일 이름 로그 기록
@@ -80,8 +79,7 @@ void pre_postprocess_by_dll(int nMode)
 	// 2024-03-28. jg kim. 장비에서 보내주는 scan mode 정보 활용하기 위함
 	//2026 - 01 - 13. jg kim.장비에서 넘겨주는 반사판 영역의 Laser On / Off x 좌표 및, 세로 줄 범위(시작 / 끝 x 좌표)
 	stDecodedHardwareParam hwParam;
-
-	if (!hwi.decodeGenorayTag(source_img, width, hwParam))
+	if (!HI_decodeGenorayTag_Simple(source_img, width, &hwParam))
 	{
 		sprintf_s(buf, "Bit status. b2:%d, b1:%d, b0:%d\n", hwParam.Bs[2], hwParam.Bs[1], hwParam.Bs[0]);
 		writelog(buf, LOG_FILE_NAME);
@@ -181,7 +179,7 @@ void pre_postprocess_by_dll(int nMode)
 	if (hwParam.Bs[2] == -1)	// 2024-05-02. jg kim. tag에 유효한 해상도 정보가 없을 경우
 	{
 		start = clock();
-		hwParam.Bs[2] = hwi.checkLowResolution(source_img, width, height) ? 0 : 1;
+		hwParam.Bs[2] = HI_checkLowResolution(source_img, width, height) ? 0 : 1;
 		end = clock();
 		sprintf_s(buf, "CheckLowResolution again%lf ms. %s\n", double(end - start), hwParam.Bs[2] ? "HR" : "SR");
 		writelog(buf, LOG_FILE_NAME);
@@ -191,7 +189,7 @@ void pre_postprocess_by_dll(int nMode)
 	nLowRes = bLowRes;
 	start = clock();
 	// 2024-06-06. jg kim. 레드마인 18519, 18583 이슈에 대응하기 위하여 순서 변경
-	pPdxData->g_en_Door = hwi._CheckDoorClosed(source_img, width, height, nLowRes) ? HW_DoorClosed : HW_DoorNotClosed;;
+	pPdxData->g_en_Door = HI_CheckDoorClosed(source_img, width, height, nLowRes) ? HW_DoorClosed : HW_DoorNotClosed;
 	end = clock();
 	sprintf_s(buf, "CheckDoorClosed %lf ms\n", double(end - start));
 	writelog(buf, LOG_FILE_NAME);
@@ -201,7 +199,7 @@ void pre_postprocess_by_dll(int nMode)
 	if (hwParam.Bs[0] < 1 || hwParam.Bs[1] < 0)
 	{
 		start = clock();
-		bLowXrayPower = hwi.checkLowXrayPower(source_img, width, height, bLowRes);
+		bLowXrayPower = HI_checkLowXrayPower(source_img, width, height, bLowRes);
 		end = clock();
 		sprintf_s(buf, "CheckLowXrayPower %lf ms\n", double(end - start));
 		writelog(buf, LOG_FILE_NAME);
@@ -225,8 +223,8 @@ void pre_postprocess_by_dll(int nMode)
 	//}
 
 	// 2024-04-22. jg kim. calibration coefficient, scan mode 유효성 검사결과 저장
-	pPdxData->g_en_CalCoefficients = hwi._CheckValidCoefficients(pPdxData->g_NewCalibrationData.data1, pPdxData->g_NewCalibrationData.data2) ? Cal_ValidCoefficients : Cal_DefaultCoefficients;
-	pPdxData->g_enScanMode = hwi._CheckValidIpIndex(hwParam.nIpIdx) ? HW_ValidScanMode : HW_InvalidScanMode;;
+	pPdxData->g_en_CalCoefficients = HI_CheckValidCoefficients(pPdxData->g_NewCalibrationData.data1, pPdxData->g_NewCalibrationData.data2) ? Cal_ValidCoefficients : Cal_DefaultCoefficients;
+	pPdxData->g_enScanMode = HI_CheckValidIpIndex(&hwParam.nIpIdx) ? HW_ValidScanMode : HW_InvalidScanMode;
 
 	sprintf(buf, "Image correction start \n");
 	writelog(buf, LOG_FILE_NAME);
@@ -270,7 +268,7 @@ void pre_postprocess_by_dll(int nMode)
 			bSaveCorrectionStep = true;
 			break;
 		}
-		SetMtfMode(pPdxData->bProcMTF);// 2026-01-12. jg kim. MTF 측정을 위한 영상보정 모드 추가
+		
 		SetFwWobblePos(hwParam.wobbleRelates[2], hwParam.wobbleRelates[3], hwParam.wobbleRelates[6], hwParam.wobbleRelates[7]); // 2026-01-12. jg kim. decoding 한 값으로 설정
 		sprintf_s(buf, "wobbles %d, %d, %d, %d\n", hwParam.wobbleRelates[2], hwParam.wobbleRelates[3], hwParam.wobbleRelates[6], hwParam.wobbleRelates[7]);
 		writelog(buf, LOG_FILE_NAME);

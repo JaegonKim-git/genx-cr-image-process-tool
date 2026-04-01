@@ -74,7 +74,6 @@ public:
 	BOOL bAcquire_after_scan;
 	BOOL bAuto_pp;
 	// 2026-01-12. jg kim. MTF 측정 모드, Wobble 보정 결과
-	BOOL bProcMTF;
 	int nCorrectWobbleResult;
 	//2026 - 01 - 13. jg kim.장비에서 넘겨주는 반사판 영역의 Laser On / Off x 좌표 및, 세로 줄 범위(시작 / 끝 x 좌표)
 	int g_iLeftLaserOnPos;

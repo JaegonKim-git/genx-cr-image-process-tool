@@ -85,7 +85,6 @@ GNIMAGEPROCESSING_API void __cdecl HI_getDefaultCalibrationCoefficients(
 GNIMAGEPROCESSING_API void __cdecl calculateCoefficients(float *coefficients, unsigned short *images, int width, int height, int L, int T, int W, int H, int count);
 
 GNIMAGEPROCESSING_API void __cdecl ParametersSetting(float *coefs, unsigned short* means, int nMeans);
-GNIMAGEPROCESSING_API void __cdecl SetMtfMode(bool bMTF);// 2026-01-12. jg kim. MTF 모드 설정 위해
 GNIMAGEPROCESSING_API int __cdecl GetCorrectWobbleResult();// 2026-01-12. jg kim. Wobble 보정 결과를 받기 위해
 // 2026-01-13. jg kim. 장비에서 넘겨주는 반사판 영역의 Laser On/Off x 좌표 및, 세로 줄 범위(시작/끝 x 좌표)를 Wobble 보정에 활용하기 위함.
 GNIMAGEPROCESSING_API void __cdecl SetFwWobblePos(int nLaserOnPos, int nLaserOffPos, int nLineStartPos, int nLineEndPos);

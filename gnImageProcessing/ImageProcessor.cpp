@@ -52,7 +52,6 @@ double g_fstripe_gain = 0.13; // org value: 0.13
 double g_fvary = g_fstripe_gain;
 int g_nPreTerm = 9;
 int g_nPostTerm = 50;
-bool g_bProcMtf = false;// 2026-01-12. jg kim. MTF 모드 설정을 위해
 int g_nCorrectWobbleResult;// 2026-01-12. jg kim. Wobble 보정 결과를 받기 위해
 // 2026-03-10. jg kim. -1: 유효한 반사판이 없어 wobble 보정을 하지 않음, 0:Wobble 보정 실패, 1: Wobble 보정 성공
 // 2026-01-13. jg kim. 장비에서 넘겨주는 반사판 영역의 Laser On/Off x 좌표 및, 세로 줄 범위(시작/끝 x 좌표)를 Wobble 보정에 활용하기 위함.
@@ -86,11 +85,6 @@ extern "C" void __cdecl ParametersSetting(float* coefs, unsigned short* means, i
 		else
 			option_pp.means[i] = 0;
 	}
-}
-
-extern "C" void __cdecl SetMtfMode(bool bMTF)// 2026-01-12. jg kim. MTF 모드 설정을 위해
-{
-	g_bProcMtf = bMTF;
 }
 
 extern "C" DLL_DECLSPEC int __cdecl GetCorrectWobbleResult()// 2026-01-12. jg kim. Wobble 보정 결과를 받기 위해
@@ -446,28 +440,6 @@ std::vector<cv::Mat> ImageProcessor::Preprocess(std::vector<cv::Mat> coeffs)
 			sprintf(buf, "PRE_4. CorrectPixelGains\n");
 			writelog(buf, LOG_FILE_NAME);
 		}
-		g_bProcMtf =true;
-		// NED 처리 디버깅을 위해 추가함. 
-		// MTF 측정을 위한 영상 보정에는 적합하지 않아 MTF 처리용 영상처리시 이 섹션을 비활성화 시켜야 함.
-		if (g_bProcMtf)// 2026-01-12. jg kim. MTF 모드 설정을 위해
-		{
-			int countsBin0 = PixelCounts(bin, 1000);
-			int countsNED = PixelCounts(NedNegative.clone().mul(1000), 1000);
-			if (countsNED < countsBin0)
-			{
-				cv::Mat temp; bin.convertTo(temp, CV_32F);
-				divide(65535, temp, temp);
-				cv::GaussianBlur(temp, temp, cv::Size(7, 7), 2);
-				for (int r = 0; r < temp.rows; r++)
-					for (int c = 0; c < temp.cols; c++)
-					{
-						float val = temp.at<float>(r, c);
-						val = val > 1 ? 1 : val < 0 ? 0 : val;
-						temp.at<float>(r, c) = val;
-					}
-				temp.copyTo(NedNegative);
-			}
-		}
 
 		cv::Mat output = ProcessNedArea(imgF, result, NedNegative);
 
@@ -503,9 +475,6 @@ std::vector<cv::Mat> ImageProcessor::Preprocess(std::vector<cv::Mat> coeffs)
 
 		// 2024-04-17. jg kim.  회의 결론으로 테두리를 검정색으로 표시하지 않기로하여 변경
 		output = LineCorrect(output, g_nPreTerm, g_nPostTerm,true);
-
-		if (m_bSaveCorrectionStep && g_bProcMtf)// 2026-01-12. jg kim. MTF 측정을 위한 영상 별도 저장
-			cv::imwrite("PRE_7. LineCorrect_MTF.tif", output, m_tiffParams);
 
 		// 2024-10-14. jg kim. 영상 좌/우 엣지 주변에 기구물 흔적이 보이는 경우 처리하기 위함.
 		output = BlendImage(gainOrg, imgF, output.clone(), NedPositive, NedNegative, bin);

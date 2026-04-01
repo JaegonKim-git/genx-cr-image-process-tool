@@ -167,7 +167,6 @@ global_data::global_data()
 	, last_image_data(nullptr)
 	, bAcquire_after_scan(TRUE)
 	, bAuto_pp(FALSE)
-	, bProcMTF(FALSE)	// 2026-01-12. jg kim. MTF 측정 모드
 	, nCorrectWobbleResult(-1)	// 2026-03-10. jg kim. Wobble 보정 결과
 	, bAcquireCalImage(FALSE)	// 2024-08-26. jg kim. cal image 획득 모드
 	, g_iCalImgCount(0)
