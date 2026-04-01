@@ -149,7 +149,7 @@ copy "$(OutDir)PortViewIpDllTest.exe" "Z:\NED\"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)ImageProcessTool\$(Configuration);$(ExtLibs)opencv-4.3.0/libs/$(Platform)/$(Configuration);$(ExtLibs)Intel/Compiler/11.1/0.65/ipp/ia32/stublib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>gnScanInformation.lib;gnCalibration.lib;gnImageProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gnImageProcessing.lib;predix_sdk.lib;ippi.lib;ippcv.lib;ipps.lib;opencv_world430.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>opencv_world430.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>

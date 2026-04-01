@@ -429,13 +429,9 @@ void pre_postprocess_by_dll(int nMode)
 void last_image_to_fin_by_dll(void)
 {
 	//predix cr  현재는  predix에 최적화되어있지 않아 그냥 리턴함
-	//return;
-
 	auto pPdxData = GetPdxData();
 	ASSERT(pPdxData);
 
-	// it will do in pre_postprocess_by_dll
-	//dummy  until now
 	auto whSize = pPdxData->map_fin.w() * pPdxData->map_fin.h();
 	ASSERT(whSize > 0);
 	ASSERT(pPdxData->map_fin.size() > 0);
@@ -444,7 +440,6 @@ void last_image_to_fin_by_dll(void)
 
 	ASSERT(pPdxData->last_image_data);
 
-	//int size = pPdxData->last_image_width * pPdxData->last_image_height;
 	if (pp_by_dll_result == SUCCESS)
 	{//succeeded
 		MYPLOGMA("last_image_to_fin_by_dll ok\n");
@@ -454,37 +449,5 @@ void last_image_to_fin_by_dll(void)
 			for (int x = 0; x < pPdxData->last_image_width; x++)
 				pPdxData->map_fin[(y * pPdxData->map_fin.w()) + x] = pPdxData->last_image_data[x + (y * pPdxData->last_image_width)];
 		}
-	}
-	else
-	{//failed
-		// Memo: Makeit - 김재곤 부장의 요청으로 기존 predix_preprocessing_sw.dll 종속성 제거.
-		ASSERT(0);
-		OutputDebugString(_T("Failed in image processing at [last_image_to_fin_by_dll].\n"));
-
-		//auto pInfo = pp_GetEmptySize2();
-		//ASSERT(pInfo);
-
-		//std::unique_ptr<InfoProcessing> ppempty( pInfo );
-		//ASSERT(size2_w > 0 && size2_h > 0);
-		//pPdxData->last_image_width = size2_w;
-		//pPdxData->last_image_height = size2_h;
-
-		//auto pResultData = ppempty->result_img.data();
-		//ASSERT(pResultData);
-
-		//memmove(pPdxData->last_image_data, pResultData, sizeof(fin_t) * pPdxData->last_image_width * pPdxData->last_image_height);
-
-		////if (pp_by_dll_res)
-		////{
-		////	//SR2HR(pPdxData->last_image_data, pPdxData->last_image_width, pPdxData->last_image_height);
-		////	pPdxData->last_image_width /= 2;
-		////	pPdxData->last_image_height /= 2;
-		////}
-		////MYPLOGDG("cut off  failed  imgae[%s][%d][%d]\n", pp_by_dll_res ? "HR" : "SR", pPdxData->last_image_width, pPdxData->last_image_height);
-		//for (int y = 0; y < pPdxData->last_image_height; y++)
-		//{
-		//	for (int x = 0; x < pPdxData->last_image_width; x++)
-		//		pPdxData->map_fin[(y * pPdxData->map_fin.w()) + x] = pPdxData->last_image_data[x + (y * pPdxData->last_image_width)];
-		//}
 	}
 }
